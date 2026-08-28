@@ -10,38 +10,61 @@ Transcord is a custom plugin for Vencord with support for 43 languages.
 - pnpm
 - Groq API key
 
+> The commands below assume your Vencord source folder is located at `%USERPROFILE%\Vencord`.
+
 ## Installation
+
+Open PowerShell and remove the old temporary Transcord folder if it exists:
+
+```powershell
+Remove-Item "$env:TEMP\VencordPlugins" -Recurse -Force -ErrorAction SilentlyContinue
+```
 
 Clone the repository:
 
-```bash
-git clone https://github.com/omerrkasdd/VencordPlugins.git
+```powershell
+git clone https://github.com/omerrkasdd/VencordPlugins.git "$env:TEMP\VencordPlugins"
 ```
 
-Move the files inside the `src` folder to:
+Create the Transcord plugin folder:
 
-```text
-Vencord/src/userplugins/transcord
+```powershell
+New-Item -ItemType Directory -Force "$HOME\Vencord\src\userplugins\transcord"
 ```
 
-Open PowerShell inside your Vencord folder.
+Copy the plugin files from `src` into Vencord:
 
-If PowerShell blocks script execution use this command for the current PowerShell session:
+```powershell
+Copy-Item "$env:TEMP\VencordPlugins\src\*" "$HOME\Vencord\src\userplugins\transcord\" -Recurse -Force
+```
+
+Go to your Vencord folder:
+
+```powershell
+cd "$HOME\Vencord"
+```
+
+If PowerShell blocks script execution allow it for the current PowerShell session:
 
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 
-If dependencies are not installed yet run:
+If dependencies are not installed yet:
 
 ```powershell
 pnpm install --frozen-lockfile
 ```
 
-Build the plugin and inject Vencord:
+Build Vencord:
 
 ```powershell
 pnpm build
+```
+
+Inject Vencord:
+
+```powershell
 pnpm inject
 ```
 
@@ -63,11 +86,21 @@ If `pnpm` is blocked by PowerShell:
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 
-If you get a dependency error while building:
+If you get a dependency error:
 
 ```powershell
 pnpm install --frozen-lockfile
+```
+
+Then run:
+
+```powershell
 pnpm build
+```
+
+and:
+
+```powershell
 pnpm inject
 ```
 
