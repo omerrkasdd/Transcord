@@ -1,0 +1,86 @@
+.vc-transcord-chat-button {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 9px;
+    color: var(--interactive-normal);
+    transition: color .12s ease, background-color .12s ease, transform .12s ease;
+}
+
+.vc-transcord-chat-button:hover {
+    color: var(--interactive-hover);
+    background: var(--background-modifier-hover);
+    transform: translateY(-1px);
+}
+
+.vc-transcord-active {
+    color: var(--brand-500);
+    background: color-mix(in srgb, var(--brand-500) 12%, transparent);
+}
+
+.vc-transcord-status-dot {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 6px;
+    height: 6px;
+    border: 2px solid var(--channeltextarea-background);
+    border-radius: 50%;
+    background: var(--status-positive);
+}
+
+.vc-transcord-result {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    width: fit-content;
+    max-width: min(760px, 92%);
+    margin-top: 5px;
+    padding: 7px 9px;
+    border: 1px solid var(--background-modifier-accent);
+    border-radius: 9px;
+    background: color-mix(in srgb, var(--background-secondary) 88%, transparent);
+    color: var(--text-normal);
+}
+
+.vc-transcord-result-icon {
+    flex: 0 0 auto;
+    margin-top: 2px;
+    color: var(--brand-500);
+}
+
+.vc-transcord-result-body {
+    min-width: 0;
+}
+
+.vc-transcord-result-text {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    line-height: 1.35;
+}
+
+.vc-transcord-result-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 3px;
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.vc-transcord-dismiss {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--interactive-normal);
+    font: inherit;
+    cursor: pointer;
+}
+
+.vc-transcord-dismiss:hover {
+    color: var(--interactive-hover);
+    text-decoration: underline;
+}
