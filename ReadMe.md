@@ -32,12 +32,6 @@ Create the Transcord plugin folder:
 New-Item -ItemType Directory -Force "$HOME\Vencord\src\userplugins\transcord"
 ```
 
-Copy the plugin files from `src` into Vencord:
-
-```powershell
-Copy-Item "$env:TEMP\VencordPlugins\src\*" "$HOME\Vencord\src\userplugins\transcord\" -Recurse -Force
-```
-
 Go to your Vencord folder:
 
 ```powershell
