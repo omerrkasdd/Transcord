@@ -17,13 +17,13 @@ Transcord is a custom plugin for Vencord with support for 43 languages.
 Open PowerShell and remove the old temporary Transcord folder if it exists:
 
 ```powershell
-Remove-Item "$env:TEMP\VencordPlugins" -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item "$env:TEMP\Transcord" -Recurse -Force -ErrorAction SilentlyContinue
 ```
 
 Clone the repository:
 
 ```powershell
-git clone https://github.com/omerrkasdd/VencordPlugins.git "$env:TEMP\VencordPlugins"
+git clone https://github.com/omerrkasdd/Transcord.git "$env:TEMP\Transcord"
 ```
 
 Create the Transcord plugin folder:
